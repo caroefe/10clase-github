@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+/*estilos generales*/
+body{
+    /*background-color: #eceef3;*/
+    background: linear-gradient(99deg, rgba(251,251,251,1) 5%, rgba(199,201,201,0.7063200280112045) 100%);
+
+    font-family: 'Roboto', sans-serif;
+}
+
+/*estilos de header*/
+header{
+    display: none;
+}
+
+/*estilos de main*/
+main{
+    display: flex;
+    flex-direction: column;
+    /*centra elementos no todos*/align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+
+main h2{
+    margin: 1rem;
+}
+main h2 span{
+    display: block;
+
+}
+
+main .boton{
+    background-color: #51b0d7;
+    margin-top: 1rem;
+    padding: 0.7rem 1.2rem 0.7rem 1.2rem;
+    color: whitesmoke;
+    box-shadow: 3px 3px 10px /*el ultimo 10px hace el efecto de sombra*/ black;
+}
+
+main img{
+    width: 60%;
+}
+
+
+/*estilos de section*/
+
+section{
+    display: none;
+}
+
+footer h4{
+    text-align: center;
+}
+
+
+/*
+
+1 rem = 16 px
+2 rem = 32px
+1.5 rem = 24px
+
+main p{
+    font-size: 1em; /* 1 rem es el tamañao que viene por defecto que viene ene le navegador
+
+
+
+las imagenes es mejor manipularlas con porcentaje %
+
+
+
+
+/* 
+
+
+em = 16px
+
+medida reralita EM toma el tamanio del contenedor/elemento mas proximo/cercano 
+    (ejemplo si main tiene 20px, entonces 1em van a valer 20px, 2em 20px)
+
+
+
+    */
+
+/*
+media query
+PANTALLA DE TABLET
+metodologia más pequeño primero*/
+@media screen and (min-width: 600px){
+    header /*etiqueta de bloque*/ {
+        display: block;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding: 0.7rem;
+        align-items: center;
+    }
+
+    header nav ul{
+        display: flex;
+        list-style: none;
+        gap: 1rem;
+       
+    }
+
+    header nav ul li{
+        font-weight: bold;
+    }
+
+    /* estilos de section*/
+
+    section{
+        display: block;
+        display: flex;
+        background-color: #BEE0F1;
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+
+    section div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        
+    }
+
+    section div img{
+        width: 20%;
+
+    }
+
+
+    
+}
+
+/*estilos de pantallas de escritorio*/
+
+@media screen and (min-width:1024px){
+    /*estilos del menu*/
+
+    header nav ul li:hover{ /*pseudoclase hover*/
+color: red;
+transform: scale(0.8);
+box-shadow: 1px 1px 2px black;
+    }
+
+
+
+    /*estilos de main*/
+    main{
+        width: 1000px;
+        display: grid;
+        grid-template-columns: 1fr ;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "p img"
+        "h2 img" 
+        "p-dos img"
+        "boton img";
+        justify-content: center;
+        justify-items: center;
+
+        
+    }
+
+    main h2{
+        grid-area: h2;
+    }
+
+    main img{
+        grid-area: img;
+    }
+
+    main p{
+        grid-area:p;
+    }
+
+    main .p-dos{
+        grid-area: p-dos;
+        width: 70%;
+    }
+
+    main .boton{
+        grid-area: boton;
+    }
+
+}
+
